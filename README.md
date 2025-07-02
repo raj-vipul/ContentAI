@@ -17,8 +17,8 @@ bun dev
 ## Quick Link
 
 - 🌐 [Visit Site](https://content-ai-sable.vercel.app/) 
-  👇👇👇 
- -E-mail : your_email+clerk_test@example.com
- -Password : vipulraj1
+  👇👇👇
+- E-mail : your_email+clerk_test@example.com
+- Password : vipulraj1
 
 
