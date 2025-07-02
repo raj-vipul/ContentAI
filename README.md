@@ -33,7 +33,6 @@ Content AI is an intelligent web app that enables users to generate high-quality
 ## Quick Link
 
 - 🌐 [Visit Site](https://content-ai-sable.vercel.app/) 
-  👇👇👇
 - E-mail : your_email+clerk_test@example.com
 - Password : vipulraj1
 
