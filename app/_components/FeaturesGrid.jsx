@@ -4,14 +4,14 @@ const features = [
     title: "25+ Templates",
     description:
       "Responsive and mobile-friendly content templates for every use case.",
-    link: "#",
+    link: "/dashboard",
   },
   {
     icon: "🤖",
     title: "AI-Powered Content",
     description:
       "Generate high-quality blogs, landing pages, and product copy instantly.",
-    link: "#",
+    link: "/dashboard",
   },
   {
     icon: "📈",

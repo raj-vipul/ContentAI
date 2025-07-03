@@ -4,28 +4,27 @@ import {
   FiHome,
   FiFileText,
   FiSettings,
-  
   FiUser,
   FiHelpCircle,
 } from "react-icons/fi";
+import { usePathname } from "next/navigation";
 import { MdHistory, MdSupportAgent } from "react-icons/md";
-import { TbRobot } from "react-icons/tb";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 
 const navItems = [
   { label: "Dashboard", icon: <FiHome />, href: "/dashboard" },
-  { label: "Templates", icon: <FiFileText />, href: "/templates" },
+  { label: "Templates", icon: <FiFileText />, href: "/dashboard" },
 
   { label: "History", icon: <MdHistory />, href: "/support" },
 
-  { label: "Settings", icon: <FiSettings />, href: "/settings" },
+  { label: "Settings", icon: <FiSettings />, href: "/userprofile" },
   { label: "Help", icon: <FiHelpCircle />, href: "/help" },
 ];
 
 export default function SideNav() {
-  const [active, setActive] = useState("Dashboard");
-
+  const pathname = usePathname();
+ 
   return (
     <div className="  h-screen w-60 bg-white border-r border-gray-200 shadow-md p-4 flex flex-col">
       <div className="mb-8 hover:cursor-pointer  rounded-lg hover:scale-105 transition-all ">
@@ -36,13 +35,15 @@ export default function SideNav() {
       </div>
 
       <nav className="flex flex-col gap-2">
-        {navItems.map((item) => (
+        {navItems.map((item) =>{
+          const isActive = pathname === item.href;
+          return (
           <Link key={item.label} href={item.href} passHref>
             <button
-              onClick={() => setActive(item.label)}
+             
               className={`group flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all
                 ${
-                  active === item.label
+                  isActive
                     ? "bg-gray-900 text-white shadow-sm"
                     : "text-gray-700 hover:bg-gray-100"
                 }`}
@@ -55,7 +56,8 @@ export default function SideNav() {
               </span>
             </button>
           </Link>
-        ))}
+        );
+      })}
         <div className="mt-4 flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-800 hover:bg-gray-100 transition-all">
           MyProfile <FiUser className="text-xl" />
           <UserButton afterSignOutUrl="/sign-in" />
@@ -64,7 +66,7 @@ export default function SideNav() {
 
       <div className="mt-auto pt-6 border-t border-gray-200">
         <p className="text-xs text-gray-400">
-          Powered by <span className="text-black font-semibold">TheVPL</span>
+          Powered by <span className="text-black font-semibold">vplraj</span>
         </p>
       </div>
     </div>
